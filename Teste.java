@@ -4,8 +4,7 @@ public class Teste {
         Pessoa pessoa = new Pessoa("Tiago");
         pessoa.adicionarAncestral();
         pessoa.adicionarAncestral();
-        pessoa.adicionarAncestral();
-        pessoa.removerAncestral("Nice");
+        pessoa.inserirAncestral();
         pessoa.imprimirArvore();
         
     }
