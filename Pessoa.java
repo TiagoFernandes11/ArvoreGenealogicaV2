@@ -59,7 +59,6 @@ public class Pessoa {
     }
 
     public void inserirAncestral() {
-        // nao funcionando
         Pessoa pessoa = this;
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite o nome do ancestral");
@@ -79,7 +78,6 @@ public class Pessoa {
     }
 
     public void inserirAncestral(String nome, String nomeDaMae) {
-        // nao funcionando
         Pessoa pessoa = this;
         Pessoa novaPessoa = new Pessoa(nome);
 
