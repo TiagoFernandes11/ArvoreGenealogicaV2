@@ -18,6 +18,27 @@ public class Pessoa {
         this.filho = filho;
     }
 
+    public void alterarNomeAncestral(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o nome do acestral para alteração: ");
+        String nome = sc.nextLine();
+        Pessoa pessoa = buscarAncestral(nome);
+        if(pessoa != null){
+            pessoa.setNome(nome);
+            return;
+        }
+        System.out.println("Ancestral não encontrado");
+    }
+
+    public void alterarNomeAncestral(String nome){
+        Pessoa pessoa = buscarAncestral(nome);
+        if(pessoa != null){
+            pessoa.setNome(nome);
+            return;
+        }
+        System.out.println("Ancestral não encontrado");
+    }
+
     public void adicionarAncestral() {
         Scanner sc = new Scanner(System.in);
         Pessoa pessoa = this;
