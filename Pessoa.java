@@ -157,4 +157,17 @@ public class Pessoa {
         this.filho = filho;
     }
 
+    @Override
+    public String toString() {
+        String s = "\n ----- Arvore geneológica -----";
+        Pessoa pessoa = this;
+        while (pessoa != null) {
+            s += pessoa.getNome() + "\n";
+            pessoa = pessoa.getMae();
+        }
+        return s;
+    }
+
+    
+
 }
