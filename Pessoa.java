@@ -69,6 +69,21 @@ public class Pessoa {
         return null;
     }
 
+    public Pessoa buscarAncestral(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Digite o nome do ancestral a ser buscado: ");
+        String nome = sc.nextLine();
+        Pessoa pessoa = this;
+        while (pessoa != null) {
+            if (pessoa.getNome().toLowerCase().equals(nome.toLowerCase())) {
+                return pessoa;
+            } else {
+                pessoa = pessoa.getMae();
+            }
+        }
+        return null;
+    }
+
     public void inserirAncestral() {
         Pessoa pessoa = this;
         Scanner sc = new Scanner(System.in);
