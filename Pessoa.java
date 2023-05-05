@@ -50,8 +50,23 @@ public class Pessoa {
         return null;
     }
 
-    public void removerAncestral(){
-        System.out.println("todo");
+    public void removerAncestral(String nome){
+        Pessoa pessoa = this;
+        while(pessoa.getMae() != null){
+            if(pessoa.getNome().toLowerCase().equals(nome.toLowerCase())){
+                if(pessoa.getFilho() != null){
+                    pessoa.getMae().setFilho(pessoa.getFilho());
+                    pessoa.getFilho().setMae(pessoa.getMae());
+                    return;
+                } else{
+                    setNome(pessoa.getMae().getNome());
+                    setMae(this.getMae().getMae());
+                    return;
+                }    
+            }
+            pessoa = pessoa.getMae();
+        }
+        pessoa.getFilho().setMae(null);      
     }
 
     public String getNome() {

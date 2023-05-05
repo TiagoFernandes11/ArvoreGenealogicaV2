@@ -1,10 +1,12 @@
 public class Teste {
 
     public static void main(String[] args) {
-        Pessoa pessoa = new Pessoa("tiago");
+        Pessoa pessoa = new Pessoa("Tiago");
         pessoa.adicionarAncestral();
         pessoa.adicionarAncestral();
-        System.out.println(pessoa.buscarAncestral("Maria").getFilho().getNome());
+        pessoa.adicionarAncestral();
+        pessoa.removerAncestral("Nice");
+        pessoa.imprimirArvore();
         
     }
 }
