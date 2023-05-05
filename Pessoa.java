@@ -36,16 +36,6 @@ public class Pessoa {
         pessoa.setMae(new Pessoa(nome, null, pessoa));
     }
 
-    public void imprimirArvore() {
-        String s = "\n ----- Arvore geneológica -----";
-        Pessoa pessoa = this;
-        while (pessoa != null) {
-            s += pessoa.getNome() + "\n";
-            pessoa = pessoa.getMae();
-        }
-        System.out.println(s);
-    }
-
     public Pessoa buscarAncestral(String nome) {
         Pessoa pessoa = this;
         while (pessoa != null) {
@@ -131,6 +121,16 @@ public class Pessoa {
             pessoa = pessoa.getMae();
         }
         pessoa.getFilho().setMae(null);
+    }
+
+    public void imprimirArvore() {
+        String s = "\n ----- Arvore geneológica -----";
+        Pessoa pessoa = this;
+        while (pessoa != null) {
+            s += pessoa.getNome() + "\n";
+            pessoa = pessoa.getMae();
+        }
+        System.out.println(s);
     }
 
     public String getNome() {
