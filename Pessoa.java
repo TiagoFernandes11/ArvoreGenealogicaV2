@@ -19,13 +19,15 @@ public class Pessoa {
     }
 
     public void adicionarAncestral() {
-        Scanner sc = new Scanner(System.in);
-        Pessoa pessoa = this;
-        while (pessoa.getMae() != null) {
-            pessoa = pessoa.getMae();
+        //try para o compilador para de chorar
+        try (Scanner sc = new Scanner(System.in)) {
+            Pessoa pessoa = this;
+            while (pessoa.getMae() != null) {
+                pessoa = pessoa.getMae();
+            }
+            System.out.println("Digite o nome do ancestral");
+            pessoa.setMae(new Pessoa(sc.nextLine(), null, pessoa));
         }
-        System.out.println("Digite o nome do ancestral");
-        pessoa.setMae(new Pessoa(sc.nextLine(), null, pessoa));
     }
 
     public void imprimirArvore(){
@@ -48,6 +50,20 @@ public class Pessoa {
             }
         }
         return null;
+    }
+
+    public void inserirAncestral(){
+        // nao funcionando
+        Pessoa pessoa = this;
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("Digite o nome do ancestral");
+            Pessoa novaPessoa = new Pessoa(sc.nextLine());
+            System.out.println("Qual o nome da mãe ?");
+            String nomeDaMae = sc.nextLine().toLowerCase();
+
+            while(pessoa != null){
+            }
+        }
     }
 
     public void removerAncestral(String nome){
