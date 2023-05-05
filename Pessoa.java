@@ -37,7 +37,7 @@ public class Pessoa {
     }
 
     public void imprimirArvore() {
-        String s = "";
+        String s = "\n ----- Arvore geneológica -----";
         Pessoa pessoa = this;
         while (pessoa != null) {
             s += pessoa.getNome() + "\n";
