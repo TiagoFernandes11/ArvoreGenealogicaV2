@@ -42,6 +42,11 @@ public class Pessoa {
     public void adicionarAncestral() {
         Scanner sc = new Scanner(System.in);
         Pessoa pessoa = this;
+        if(pessoa.nome == null){
+            System.out.println("Digite o nome da primeira pessoa: ");
+            pessoa.setNome(sc.nextLine());
+            return;
+        }
         while (pessoa.getMae() != null) {
             pessoa = pessoa.getMae();
         }
@@ -51,6 +56,10 @@ public class Pessoa {
 
     public void adicionarAncestral(String nome){
         Pessoa pessoa = this;
+        if(pessoa.nome == null){
+            pessoa.setNome(nome);
+            return;
+        }
         while (pessoa.getMae() != null) {
             pessoa = pessoa.getMae();
         }
@@ -160,7 +169,7 @@ public class Pessoa {
     }
 
     public void imprimirArvore() {
-        String s = "\n ----- Arvore geneológica -----";
+        String s = "\n ----- Arvore geneológica -----\n";
         Pessoa pessoa = this;
         while (pessoa != null) {
             s += pessoa.getNome() + "\n";
@@ -195,7 +204,7 @@ public class Pessoa {
 
     @Override
     public String toString() {
-        String s = "\n ----- Arvore geneológica -----";
+        String s = "\n ----- Arvore geneológica -----\n";
         Pessoa pessoa = this;
         while (pessoa != null) {
             s += pessoa.getNome() + "\n";
