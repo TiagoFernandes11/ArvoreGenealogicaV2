@@ -24,6 +24,8 @@ public class Pessoa {
         String nome = sc.nextLine();
         Pessoa pessoa = buscarAncestral(nome);
         if(pessoa != null){
+            System.out.println("Digite o novo nome: ");
+            nome = sc.nextLine();
             pessoa.setNome(nome);
             return;
         }
@@ -31,9 +33,12 @@ public class Pessoa {
     }
 
     public void alterarNomeAncestral(String nome){
+        Scanner sc = new Scanner(System.in);
         Pessoa pessoa = buscarAncestral(nome);
         if(pessoa != null){
-            pessoa.setNome(nome);
+            System.out.println("Digite o novo nome: ");
+            String novoNome = sc.nextLine();
+            pessoa.setNome(novoNome);
             return;
         }
         System.out.println("Ancestral não encontrado");
