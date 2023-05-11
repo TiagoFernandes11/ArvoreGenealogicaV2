@@ -44,6 +44,15 @@ public class Pessoa {
         System.out.println("Ancestral não encontrado");
     }
 
+    public void alterarNomeAncestral(String nome, String novoNome){
+        Pessoa pessoa = buscarAncestral(nome);
+        if(pessoa != null){
+            pessoa.setNome(novoNome);
+            return;
+        }
+        System.out.println("Ancestral não encontrado");
+    }
+
     public void adicionarAncestral() {
         Scanner sc = new Scanner(System.in);
         Pessoa pessoa = this;
